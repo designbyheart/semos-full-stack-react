@@ -6,6 +6,32 @@ const LoginPage = () => {
     const [password, setPassword] = useState('124')
     const [isSubmitted, setIsSubmitted] = useState(false)
 
+    useEffect(() => {
+        loadData()
+    }, [])
+
+    const loadData = async () => {
+        console.log('login page mounted')
+        // fetch('https://api.opendota.com/api/heroes')
+        //     .then(async (response) => {
+        //         const data = await response.json()
+        //         // console.log('Here is your data', data)
+        //         setHeroes(data)
+        //         // // check for error response
+        //         // if (!response.ok) {
+        //         //     // get error message from body or default to response statusText
+        //         //     const error = (data && data.message) || response.statusText
+        //         //     return Promise.reject(error)
+        //         // }
+
+        //         // this.setState({ totalReactPackages: data.total })
+        //     })
+        //     .catch((error) => {
+        //         // this.setState({ errorMessage: error.toString() })
+        //         console.error('There was an error!', error)
+        //     })
+    }
+
     const updateValue = (event) => {
         const fieldID = event.target.id
         if (fieldID === 'username') {
